@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx} % Gestione immagini
+\usepackage{amsmath} %simboli matematici
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+\title{Esercizi 21-10-26}
+\author{Riccardo Gennaro}
+\date{October 2021}
+
+\begin{document}
+
+\maketitle
+
+\section*{Esercizio 1}
+
+    Scrivere una funzione \textbf{risorsiva} che rimuove un elemento da un vettore.
+    Le firma della funzione è:
+
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    void remove_rec(float a[], int& n, int i);
+    \end{minted}
+    
+    \noindent La funzione rimuove a[i] shiftando gli elementi successivi a quella posizione, decrementando n a ogni chiamata.
+
+\section*{Esercizio 2}
+
+    Scrivere \textbf{ricorsivamente} la seguente funzione
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    float sum(float* p[], int n);
+    \end{minted}
+    
+    \noindent che ritorna la somma dei \textit{floats} puntati dai primi n pointers nell'array \textbf{p}.
+    
+\section*{Esercizio 3}
+
+Il triangolo di Tartaglia è una disposizione geometrica dei coefficienti binomiali, ossia dei coefficienti dello sviluppo del binomio $(a + b)$ elevato a una qualsiasi potenza $n$, a forma di triangolo.\\
+\noindent Il Triangolo è costruito come descritto dalla seguente definizione:
+
+    \[x_{ij} = \left\{ \begin{array}{ll}
+    x_{ij} = x_{i-1,j-1}+x_{i-1,j} & i=1,...,n \bigwedge j=2,...,n - \{i+1\} \\ 
+    1 & j=1 \bigvee j=i \\
+    \end{array}\right.\]  
+    
+\noindent dove $x_{ij}$ è l'elemento alla riga $i$ e colonna $j$ della matrice $T[i][j]$.
+\newpage \noindent Scrivere la funzione 
+
+\begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    void tartaglia(int T[DIM][DIM], int n);
+\end{minted}
+
+che, dato in ingresso l'intero $n$ e la matrice T di dimensione fissata e costante, restituisca una matrice $T$ fino a profondità pari a $n$.
+Per esempio, la chiamata \textit{tartaglia(T, 5)} deve restituire la matrice.
+
+\[
+    \begin{bmatrix}
+        1 & 0 & 0 & 0 & 0\\
+        1 & 1 & 0 & 0 & 0\\
+        1 & 2 & 1 & 0 & 0\\
+        1 & 3 & 3 & 1 & 0\\
+        1 & 4 & 6 & 4 & 1\\
+    \end{bmatrix}
+\]
+
+\section*{Esercizio 4}
+
+Scrivere la funzione
+
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    double std_deviation(double x[], int n);
+    \end{minted}
+    
+    \noindent che ritorna la \textit{deviazione standard} di un set di dati. Il set di dati è implementato mediante l'array x, ed è composto da \textit{n} double \textit{$x_0, ..., x_{n-1}$}.La formula per la deviazione standard è
+        \[ s=\sqrt{\frac{\sum_{i=0}^{n-1}(x_i-\overline{x})^2}{n-1}}\]
+    dove $\overline{x}$ è la media dei dati.  
+    
+\section*{Esercizio 4-bis}
+
+    Scrivere la funzione dell'esercizio 4 \textbf{ricorsivamente}.
+    
+\section*{Esercizio 5}
+
+    Dato il codice \textit{esercizio\textunderscore5}, che contiene la lista dei primi cento numeri primi, scrivere la funzione
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    int primo(int n);
+    \end{minted}
+        
+    \noindent che restituisce
+    \begin{itemize}
+        \item \textbf{0}, se il numero inserito non è primo;
+        \item \textbf{-1}, se non si può determinare se il numero è primo o meno;
+        \item \textbf{1}, se il numero inserito è primo;
+    \end{itemize}
+    
+\end{document}
