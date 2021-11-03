@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx} % Gestione immagini
+\usepackage{amsmath} %simboli matematici
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+\title{Esercizi 21-10-19}
+\author{Riccardo Gennaro}
+\date{October 2021}
+
+\begin{document}
+
+\maketitle
+
+\section*{Esercizio 1}
+
+    Scrivere un programma che legga una stringa - char input[DIM] - da \textit{stdin} e la stampi \textbf{al contrario} due volte; la prima volta attraverso una funzione iterativa, la seconda volta con una funzione ricorsiva
+    Le firme delle funzioni sono:
+
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    void stampa_iterativa(char*);
+    void stampa_ricorsiva(char*);
+    \end{minted}
+
+\section*{Esercizio 2}
+
+    Scrivere la seguente funzione
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    float sum(float* p[], int n);
+    \end{minted}
+    
+    \noindent che ritorna la somma dei \textit{floats} puntati dai primi n pointers nell'array \textbf{p}.
+    
+\section*{Esercizio 3}
+
+Scrivere nel file esercizio3.cc la dichiarazione e la definizione della funzione\\ \textbf{ricorsiva} \textit{somma\_prodotto\_incrociato} che, presi come parametri due array di\\ numeri interi \textit{primo} e \textit{secondo}, della stessa dimensione, e un terzo parametro intero \textit{dim}, pari alla dimensione dei due array, restituisca la somma dei prodotti di elementi dei due array, calcolati come segue. I prodotti vanno calcolati\\ moltiplicando il primo elemento del primo array con l’ultimo elemento del\\ secondo, poi il secondo elemento del primo array con il penultimo del secondo, il terzo con il terzultimo e così via.
+\newpage
+\noindent Per esempio, dati due array 
+\begin{verbatim}
+a:
+    {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+e b:
+    {1, 1, 2, 3, 5, 8, 13, 21, 34, 55}  
+\end{verbatim}
+
+\noindent così definiti il risultato del calcolo sarà \textbf{364}.\\
+
+\noindent NOTA 1: La funzione \textbf{deve essere ricorsiva} ed al suo interno \textbf{non ci possono essere cicli o chiamate a funzioni contenenti cicli}. Può fare uso di eventuali funzioni ausiliarie purché a loro volta ricorsive.\\
+
+\noindent NOTA 2: La funzione deve funzionare senza errore con ogni possibile array di dimensione uguale.
+    
+\section*{Esercizio 4}
+
+Scrivere un programma che, attraverso la funzione
+
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    void rotate(int a[], int n, int k);
+    \end{minted}
+    
+    \noindent ruota i primi \textit{n} elementi dell'array \textbf{a}, \textit{k} posizioni a destra (o \textit{k} posizioni a sinistra se \textit{k} è negativo).\\
+    Per esempio, la chiamata \textit{rotate(a, 8, 3)} trasformerebbe \{22, 33, 44, 55, 66, 77, 88, 99\} in \{77, 88, 99, 22, 33, 44, 55, 66\}. La chiamata \textit{rotate(a, 8, -5)} ha lo stesso effetto.
+    
+\section*{Esercizio 5}
+
+    Scrivere un programma che, attraverso la funzione
+    
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    int cmp(char* s1, char* s2);
+    \end{minted}
+    
+    \noindent compara \textit{n} bytes a cominciare da \textbf{s2} con quelli corrispondenti di \textbf{s1}, dove \textit{n} è il numero di bytes necessari affinché, sommati a \textbf{s2}, questo punti al carattere nullo '\textbackslash0'.
+    L'intero restituito deve essere pari a
+    \begin{itemize}
+        \item \textbf{0}, se tutti gli \textit{n} bytes coincidono;
+        \item \textbf{-1}, se il byte di \textbf{s1} è minore o uguale al byte di \textbf{s2} al primo mismatch;
+        \item \textbf{1}, se il byte di \textbf{s1} è maggiore stretto al byte di \textbf{s2} al primo mismatch;
+    \end{itemize}
+    
+\end{document}
