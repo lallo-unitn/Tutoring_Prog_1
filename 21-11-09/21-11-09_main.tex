@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx} % Gestione immagini
+\usepackage{amsmath} %simboli matematici
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+\title{Esercizi 21-11-09}
+\author{Riccardo Gennaro}
+\date{October 2021}
+
+\begin{document}
+
+\maketitle
+
+\section*{Esercizio 1}
+
+    Scrivere la funzione
+
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    void outerProduct3(float p[][3], float a[], float b[]);
+    \end{minted}
+    
+    che ritorna il \textit{prodotto esterno} dei primi tre elementi di \textbf{a} e \textbf{b}. Tale \textit{prodotto esterno} è definito come la matrice p[3][3] i cui elementi $p_(ij)$ sono tali che 
+        \[p_{ij} = a_i \cdot b_j\]
+
+\section*{Esercizio 2}
+
+    Scrivere un programma che, dato un file di input
+    contente delle parole, generi un secondo file in output che contenga le stesse
+    parole, ma in ordine inverso rispetto al file iniziale. Per essere copiata, una
+    parola deve essere composta da un numero di caratteri \textbf{pari}.\\
+    
+    \noindent Il programma dovrà accettare due parametri da riga di comando: il nome
+    del file in input e il nome del file su cui effettuare l'output, in questo ordine.\\
+    
+    \noindent Il programma dovrà anche implementare dei controlli sul numero di argomenti
+    passati da riga di comando e sull'apertura dei file (in caso di un file
+    di input non esistente).\\
+    
+    \noindent Procediamo ora con un esempio. Dato in input il file input\textunderscore A, contenente le seguenti parole:\\
+    
+    \noindent \texttt{Impara a risolvere tutti i problemi che sono stati risolti.
+    Richard Feynman}\\
+    \newpage
+    \noindent se l'eseguibile è a.out, allora il comando \texttt{./a.out input\textunderscore A output} genererà un file chiamato \texttt{output} che conterrà le seguenti parole:\\
+    
+    \noindent \texttt{risolti. sono problemi Impara}\\
+    
+    \noindent \textbf{Note}
+    \begin{itemize}
+        \item Per semplicità, considerate come una \textit{parola} qualsiasi stringa di caratteri
+        compresa tra due spazi bianchi (e/o separatori di tabulazione,
+        nuova linea e fine file). Quindi, sono da considerarsi parole anche
+        stringhe come \texttt{"andato:"} o \texttt{"!esempio"}.
+        \item Il file in input può contenere al massimo 10000 parole e ognuna di
+        queste parole è formata da al massimo 100 caratteri.
+        \item Non è consentito l'utilizzo di librerie diverse da \texttt{<iostream>} ed \texttt{<fstream>} pena \textbf{l'annullamento dell'esercizio}.
+        \item E' consentito definire ed implementare funzioni ausiliarie che possano\\
+        aiutarvi nella soluzione del problema.
+    \end{itemize}
+
+\section*{Esercizio 3}
+
+    Scrivere nel file esercizio3.cc:\\
+    
+    \noindent \begin{itemize}
+        \item una funzione \textbf{ricorsiva} \textit{calcola\textunderscore norma\textunderscore ricorsivo} che, dato un array di long e la sua dimensione, restituisca un numero \textit{double} corrispondente alla \textbf{norma ad uno} dell’array stesso;
+        \item una funzione \textbf{ricorsiva} \textit{normalizza} che, dato un array di \textit{long} e la sua dimensione, restituisca un \textbf{nuovo array} contenente, per ogni elemento, l’elemento corrispondente del primo array diviso per la \textbf{norma ad uno} dell’array in input, calcolata con la funzione di cui al punto precedente.
+        
+    \end{itemize}
+        
+    \noindent Le operazioni di calcolo della norma e di divisione degli elementi dell’array per il valore della norma vanno eseguite tramite funzioni ricorsive, \textbf{pena l’annullamento dell’esercizio}.\\
+    
+    \noindent \textbf{Non è ammesso l’uso di cicli, variabili globali o static.} È ammesso l’uso di funzioni ausiliarie, purché ricorsive. È consentito l’uso della funzione \texttt{sqrt} della libreria \texttt{cmath}.\\
+    
+    \noindent \textbf{E vietata ogni modifica alla funzione main pena l’annullamento dell’esercizio.}\\
+    
+    \noindent NOTA 1: La norma ad uno di un vettore è la somma dei degli elementi del vettore.
+    \[||x||:=\sum_{i=1}^{n} x_i\]
+    
+    Ad esempio:
+    \begin{itemize}
+        \item Array in input: [1, 2, 4]
+        \item Norma = 1 + 2 + 4 = 7
+        \item Array normalizzato = [1/7, 2/7, 4/7] = [0.142857, 0.285714, 0.571428]
+    \end{itemize}
+    
+    \noindent NOTA 2: I valori dell’array iniziale vanno inseriti utilizzando la funzione \texttt{leggi(...)} definita in \texttt{array.h} e \texttt{array.o}.\\
+    La stampa dell’array normalizzato va eseguita usando la funzione \texttt{stampa(...)} definita in \texttt{array.h} e \texttt{array.o}.
+    
+\section*{Esercizio 4}
+
+Scrivere un programma che calcoli il \textit{prodotto matriciale} di due matrici di numeri interi. Se le matrici non sono compatibili per il prodotto stampare un messaggio di errore.\\
+\noindent La dimensione delle matrici deve essere specificata dall'utente. Il prodotto è calcolato con la funzione seguente:
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    int** compute_prod(int** m1, int r1, int c1, int** m2, int c2);
+    \end{minted}
+
+Dove 
+\begin{itemize}
+    \item \texttt{m1} è la prima matrice;
+    \item \texttt{r1} è il numero di righe di m1;
+    \item \texttt{c1} è il numero di colonne di m1;
+    \item \texttt{m2} è la seconda matrice;
+    \item \texttt{c2} è il numero di colonne di m2;
+\end{itemize}
+NOTA: la complessità di \texttt{compute\textunderscore prod(...)} deve essere pari o inferiore a $O(n^3)$. Ciò significa che potete implementare la funzione con l'algoritmo che si basa sulla definizione del prodotto fra matrici, oppure, se siete dei pazzi maniaci, potete implementare l'\color{blue}\href{https://it.wikipedia.org/wiki/Algoritmo_di_Strassen}{algoritmo di Strassen}\color{black}.
+\end{document}
