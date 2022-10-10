@@ -10,7 +10,6 @@ int main(){
 	while(num!=1){
 		flag=true;
 		if(num%div == 0){
-			
 			num/=div;
 			cout << " " << div;
 		}

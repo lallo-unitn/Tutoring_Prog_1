@@ -1,6 +1,5 @@
-#include<iostream>
-#include<cstdlib>
-using namespace std;
+#include<stdio.h>
+#include<stdlib.h>
 
 int cmp(char* s1, char* s2);
 
@@ -9,11 +8,11 @@ const int N = 5;
 int main(){
     char s1[] = "prova";
     char s2[] = "prova";
-    cout << "Test1 = " << cmp(s1, s2) << endl;
+    printf("Test1 = %i\n", cmp(s1, s2));
     s1[4] = 'b';
-    cout << "Test2 = " << cmp(s1, s2) << endl;
+    printf("Test2 = %i\n", cmp(s1, s2));
     s2[4] = 'c';
-    cout << "Test3 = " << cmp(s1, s2) << endl;
+    printf("Test3 = %i\n", cmp(s1, s2));
     return EXIT_SUCCESS;
 }
 

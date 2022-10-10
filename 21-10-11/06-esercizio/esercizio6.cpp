@@ -8,8 +8,15 @@ void fact_scomp(int input);
 
 int main(){
     int input = 0;
-    cout << "Inserisci un intero maggiore stretto di 0" << endl;
+    cout << "Inserisci un intero maggiore stretto di 1" << endl;
     cin >> input;
+    while (input <= 1)
+    {   
+        system("clear");
+        cout << "Input invalido \n";
+        cout << "Inserisci un intero maggiore stretto di 1" << endl;
+        cin >> input;
+    }
     fact_scomp(input);
     return EXIT_SUCCESS;
 }

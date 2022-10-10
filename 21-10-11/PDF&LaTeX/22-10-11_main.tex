@@ -8,15 +8,15 @@
 \usepackage{xcolor} % to access the named colour LightGray
 \definecolor{LightGray}{gray}{0.9}
 
-\title{Esercizi 21-10-19}
+\title{Esercizi 22-10-11}
 \author{Riccardo Gennaro}
-\date{October 2021}
+\date{October 2022}
 
 \begin{document}
 
 \maketitle
 
-\section*{Esercizio 1}
+\section*{Esercizio 1 - Reversing a string}
 
     Scrivere un programma che legga una stringa - char input[DIM] - da \textit{stdin} e la stampi \textbf{al contrario} due volte; la prima volta attraverso una funzione iterativa, la seconda volta con una funzione ricorsiva
     Le firme delle funzioni sono:
@@ -30,11 +30,11 @@
         linenos
     ]
     {C}
-    void stampa_iterativa(char*);
-    void stampa_ricorsiva(char*);
+    void stampa_iterativa(char* str);
+    void stampa_ricorsiva(char* str);
     \end{minted}
 
-\section*{Esercizio 2}
+\section*{Esercizio 2 - Summation of an array of pointers}
 
     Scrivere la seguente funzione
     \begin{minted}
@@ -51,7 +51,7 @@
     
     \noindent che ritorna la somma dei \textit{floats} puntati dai primi n pointers nell'array \textbf{p}.
     
-\section*{Esercizio 3}
+\section*{Esercizio 3 - A reversed cross product}
 
 Scrivere nel file esercizio3.cc la dichiarazione e la definizione della funzione\\ \textbf{ricorsiva} \textit{somma\_prodotto\_incrociato} che, presi come parametri due array di\\ numeri interi \textit{primo} e \textit{secondo}, della stessa dimensione, e un terzo parametro intero \textit{dim}, pari alla dimensione dei due array, restituisca la somma dei prodotti di elementi dei due array, calcolati come segue. I prodotti vanno calcolati\\ moltiplicando il primo elemento del primo array con l’ultimo elemento del\\ secondo, poi il secondo elemento del primo array con il penultimo del secondo, il terzo con il terzultimo e così via.
 \newpage
@@ -69,7 +69,7 @@ e b:
 
 \noindent NOTA 2: La funzione deve funzionare senza errore con ogni possibile array di dimensione uguale.
     
-\section*{Esercizio 4}
+\section*{Esercizio 4 - To rotate an array}
 
 Scrivere un programma che, attraverso la funzione
 
@@ -88,7 +88,7 @@ Scrivere un programma che, attraverso la funzione
     \noindent ruota i primi \textit{n} elementi dell'array \textbf{a}, \textit{k} posizioni a destra (o \textit{k} posizioni a sinistra se \textit{k} è negativo).\\
     Per esempio, la chiamata \textit{rotate(a, 8, 3)} trasformerebbe \{22, 33, 44, 55, 66, 77, 88, 99\} in \{77, 88, 99, 22, 33, 44, 55, 66\}. La chiamata \textit{rotate(a, 8, -5)} ha lo stesso effetto.
     
-\section*{Esercizio 5}
+\section*{Esercizio 5 - strcmp, but you have to write it}
 
     Scrivere un programma che, attraverso la funzione
     
@@ -111,5 +111,13 @@ Scrivere un programma che, attraverso la funzione
         \item \textbf{-1}, se il byte di \textbf{s1} è minore o uguale al byte di \textbf{s2} al primo mismatch;
         \item \textbf{1}, se il byte di \textbf{s1} è maggiore stretto al byte di \textbf{s2} al primo mismatch;
     \end{itemize}
+    
+\section*{Esercizio 6 - A little maths}
+    Implementare un programma che dato un intero positivo e diverso da zero ritorni la scomposizione in fattori primi.
+    NOTA1: non è richiesta la formattazione dell'output con le potenze.
+    NOTA2: se sei un pazzo maniaco, puoi provare a implementare la funzione per il test di primalità con i metodi di Miller-Rabin o Fermat.
+    
+\section{Esercizio 7 - I want to play a game with you}
+    Programmare tic-tac-toe (o tris, in italiano).
     
 \end{document}
