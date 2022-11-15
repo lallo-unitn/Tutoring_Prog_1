@@ -1,0 +1,6 @@
+*.out
+.vscode/*
+*.aux
+*.log
+*.pyg
+*.synctex.gz
