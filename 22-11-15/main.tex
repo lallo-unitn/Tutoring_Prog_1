@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx} % Gestione immagini
+\usepackage{amsmath} %simboli matematici
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+\title{Esercizi 22-11-15}
+\author{Riccardo Gennaro}
+\date{November 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Esercizio 1}
+
+    Scrivere un programma che gestisca l'anagrafica di un set di utenti.
+
+    In particolare, il programma deve poter:
+    \begin{itemize}
+        \item aggiungere un l'anagrafica di un utente;
+        \item stampare le anagrafiche ordinate per nome;
+        \item stampare le anagrafiche ordinate per cognome;
+        \item cercare un anagrafica per nome (corrispondenza esatta);
+        \item cercare un anagrafica per cognome (corrispondenza esatta);
+    \end{itemize}
+
+    Con anagrafica si intende:
+
+    \begin{itemize}
+        \item nome;
+        \item cognome;
+        \item indirizzo, composto da:
+        \begin{itemize}
+            \item via;
+            \item civico;
+            \item comune;
+            \item CAP;
+            \item provincia;
+        \end{itemize}
+    \end{itemize}
+
+    \noindent Descrivere l'anagrafica tramite \textit{struct}.    
+
+    \noindent Il programma prevede delle dimensioni massime per gli array.
+
+    L'utente deve poter scegliere una delle opzioni sopra. Il programma termina quando l'utente inserisce la stringa '\texttt{exit}' nel menù.
+    Scrivere il programma rispettando i principi della programmazione su file multipli. 
+
+    \newpage
+
+\section*{Esercizio 2}
+
+Scrivere un programma che data una matrice bidimensionale con dimensioni inserite dall'utente, la ruoti di 90° clockwise. Per esempio,
+    \[
+    \begin{bmatrix}
+        11 & 22 & 33\\
+        44 & 55 & 66\\
+        77 & 88 & 99
+    \end{bmatrix} \]
+    
+    \noindent verrà ruotata nel modo seguente
+    
+    \[
+    \begin{bmatrix}
+        77 & 44 & 11\\
+        88 & 55 & 22\\
+        99 & 66 & 33
+    \end{bmatrix} \]
+
+\end{document}
