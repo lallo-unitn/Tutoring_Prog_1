@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx} % Gestione immagini
+\usepackage{amsmath} %simboli matematici
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+\title{Esercizi 22-11-11}
+\author{Riccardo Gennaro & Jan Tomassi}
+\date{November 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{NOTA}
+
+Tutti gli esercizi vanno svolti rispettando le buone pratiche di allocazione dinamica. Potete implementare su più file per esercitarvi.
+
+\section*{Esercizio 1}
+
+    Scrivi una funzione che prenda una stringa e restituisca un conteggio di ogni lettera nella stringa. Ad esempio, "my dog
+    ate my homework" contiene 3 m, 3 o, 2 e, 2 y e uno ciascuno tra d, g, a, t, h, w, r, k.
+
+    La funzione dovrebbe accettare un singolo argomento stringa e restituire un array allocato dinamicamente di 26 numeri interi
+    che rappresenta il conteggio di ciascuna delle lettere dalla a alla z rispettivamente. La funzione dovrebbe essere case insensitive, cioè,
+    contare 'A' e 'a' come l'occorrenza della lettera a. (Suggerimento: usa le funzioni di conversione da lettera a numero intero.) Non contare i caratteri non alfabetici (ad es. spazi, punteggiatura, cifre, ecc.)
+
+    Il programma richiederà una stringa dall'utente usando getline(). Chiamando la funzione, questa stampa la frequenza di ogni lettera nella stringa. Non elencare lettere che non ricorrono almeno una volta.
+
+    Example:
+    \begin{verbatim}
+        Enter a string: my dog at my homework
+        Letter frequency
+            a 1
+            d 1
+            e 1
+            g 1
+            h 1
+            k 1
+            m 3
+            o 3
+            r 1
+            t 1
+            w 1
+            y 2
+    \end{verbatim}
+
+    \section*{Esercizio 2}
+    Creare una matrice dinamica di tipo int[][] con dimensioni a piacere (aka allocata dinamicamente), e assegnare ad ogni cella un valore che si puo ottenere dalla funzione rand() la quale va prima inizializzata con srand(), per poi stampare tutta la matrice.
+
+\end{document}
