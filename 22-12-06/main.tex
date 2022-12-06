@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx} % Gestione immagini
+\usepackage{amsmath} %simboli matematici
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+\title{Esercizi 22-11-11}
+\author{Riccardo Gennaro & Jan Tomassi}
+\date{November 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{NOTA}
+
+Tutti gli esercizi vanno svolti rispettando le buone pratiche di allocazione dinamica. Potete implementare su più file per esercitarvi.
+
+\section*{Esercizio 1}
+
+Un messaggio viene rappresentato mediante una struct \\
+
+\begin{verbatim}
+struct messaggio {
+   char testo[10000];
+   int priorita;
+}    
+\end{verbatim}
+
+dove priorità ha un range crescente da 1 a 10.
+Scrivere una struttura dati "coda a priorita" in cui e' possibile inserire messaggi, da cui vengono estratti in modo FIFO per classi di priorita': (prima quelli a priorita' 10, poi quelli a priorita' 9,...)
+
+\section*{Esercizio 2}
+
+    
+
+\end{document}
