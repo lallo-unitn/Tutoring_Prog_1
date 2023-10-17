@@ -26,12 +26,10 @@ int main(){
 
 int stampa_iterativa(char* input){
     int length = 0;
-    for (int i = 0; input[i] != '\0'; i++)
-    {
+    for (int i = 0; input[i] != '\0'; i++){
         length++;
     }
-    for (int i = length; i >= 0; i--)
-    {
+    for (int i = length; i >= 0; i--){
         printf("%c", input[i]);
     }
     printf("\n");
@@ -42,7 +40,6 @@ int stampa_iterativa(char* input){
 void stampa_ricorsiva(char* input){
     stampa_ricorsiva_aux(input, 0);
     printf("\n");
-    return;
 }
 
 void stampa_ricorsiva_aux(char* input, int count){
@@ -52,5 +49,4 @@ void stampa_ricorsiva_aux(char* input, int count){
         count--;
         printf("%c", input[count]);
     }
-    return;
 }

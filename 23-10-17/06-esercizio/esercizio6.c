@@ -34,6 +34,7 @@ int is_prime(int n){
 void fact_scomp(int input){
     for (int i = 2; input > 1; i++)
     {
+        // if input is prime and input % i == 0 then i is a prime factor of input
         if(is_prime(i) == TRUE && (input % i) == 0){
             printf("%i  ", i);
             input /= i;
