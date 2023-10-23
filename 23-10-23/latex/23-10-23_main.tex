@@ -8,9 +8,9 @@
 \usepackage{xcolor} % to access the named colour LightGray
 \definecolor{LightGray}{gray}{0.9}
 
-\title{Esercizi 21-10-26}
+\title{Esercizi 23-10-23}
 \author{Riccardo Gennaro}
-\date{October 2021}
+\date{October 2023}
 
 \begin{document}
 
@@ -37,33 +37,16 @@
 
 \section*{Esercizio 2}
 
-    Scrivere \textbf{ricorsivamente} la seguente funzione
-    \begin{minted}
-    [
-        frame=lines,
-        framesep=2mm,
-        baselinestretch=1.2,
-        fontsize=\footnotesize,
-        linenos
-    ]
-    {C}
-    float sum(float* p[], int n);
-    \end{minted}
-    
-    \noindent che ritorna la somma dei \textit{floats} puntati dai primi n pointers nell'array \textbf{p}.
-    
-\section*{Esercizio 3}
-
 Il triangolo di Tartaglia è una disposizione geometrica dei coefficienti binomiali, ossia dei coefficienti dello sviluppo del binomio $(a + b)$ elevato a una qualsiasi potenza $n$, a forma di triangolo.\\
-\noindent Il Triangolo è costruito come descritto dalla seguente definizione:
+%% \noindent Il Triangolo è costruito come descritto dalla seguente definizione:
 
-    \[x_{ij} = \left\{ \begin{array}{ll}
-    x_{ij} = x_{i-1,j-1}+x_{i-1,j} & i=1,...,n \bigwedge j=2,...,n - \{i+1\} \\ 
-    1 & j=1 \bigvee j=i \\
-    \end{array}\right.\]  
+%%    \[x_{ij} = \left\{ \begin{array}{ll}
+%%    x_{ij} = x_{i-1,j-1}+x_{i-1,j-1} & i=1,...,n \bigwedge j=2,...,n - \{i+1\} \\ 
+%%    1 & j=1 \bigvee j=i \\
+%%    \end{array}\right.\]  
     
-\noindent dove $x_{ij}$ è l'elemento alla riga $i$ e colonna $j$ della matrice $T[i][j]$.
-\newpage \noindent Scrivere la funzione 
+%% \noindent dove $x_{ij}$ è l'elemento alla riga $i$ e colonna $j$ della matrice $T[i][j]$.
+\noindent Scrivere la funzione 
 
 \begin{minted}
     [
@@ -90,7 +73,7 @@ Per esempio, la chiamata \textit{tartaglia(T, 5)} deve restituire la matrice.
     \end{bmatrix}
 \]
 
-\section*{Esercizio 4}
+\section*{Esercizio 3}
 
 Scrivere la funzione
 
@@ -110,7 +93,7 @@ Scrivere la funzione
         \[ s=\sqrt{\frac{\sum_{i=0}^{n-1}(x_i-\overline{x})^2}{n-1}}\]
     dove $\overline{x}$ è la media dei dati.  
     
-\section*{Esercizio 4-bis}
+\section*{Esercizio 4}
 
     Scrivere la funzione dell'esercizio 4 \textbf{ricorsivamente}.
     

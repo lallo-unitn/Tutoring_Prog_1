@@ -3,7 +3,7 @@
 #include<cmath>
 using namespace std;
 
-int DIM = 10;
+const int DIM = 10;
 
 // calcola la media
 double mean(double x[], int n);

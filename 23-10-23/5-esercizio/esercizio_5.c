@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+#define MAX_PRIMI 100
+
+// List of primes between 0 and 541
+const int CENTO_PRIMI[MAX_PRIMI] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541 };
+
+// Primality test. Returns
+//  __ 1 if the entered number is prime
+//  __ 0 if the entered number is not prime
+//  __ -1 if it is not possible to answer
+int primo(int n);
+
+// Auxiliary function for primo
+int cento_primi_rec(int n, int indice);
+
+int main() {
+    int n, ris;
+    do {
+        printf("Introdurre un numero intero > 1: ");
+        scanf("%d", &n);
+        if (n <= 1) {
+            fprintf(stderr, "Il numero e’ troppo piccolo.\n");
+        } else {
+            ris = primo(n);
+            if (ris < 0) {
+                printf("Non sono riuscito a stabilire se %d e’ primo.\n", n);
+            } else {
+                printf("%d %s e’ primo.\n", n, (ris > 0) ? "" : "non");
+            }
+        }
+    } while (n > 1);
+
+    return 0;
+}
+
+int primo(int n) {
+    int res;
+    int depth = 0;
+    res = cento_primi_rec(n, depth);
+    return res;
+}
+
+int cento_primi_rec(int n, int indice) {
+    int ris;
+    if (indice >= MAX_PRIMI) {
+        ris = -1;
+    } else if (n == CENTO_PRIMI[indice]) {
+        ris = 1;
+    } else if ((n % CENTO_PRIMI[indice]) == 0) {
+        ris = 0;
+    } else {
+        ris = cento_primi_rec(n, indice + 1);
+    }
+    return ris;
+}

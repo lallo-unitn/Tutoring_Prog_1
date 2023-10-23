@@ -19,7 +19,7 @@ int main(){
     do {
         cout << "Introdurre un numero intero > 1: ";
         cin >> n;
-        if (n < 1)cerr << "Il numero e’ troppo piccolo." << endl;
+        if (n <= 1)cerr << "Il numero e’ troppo piccolo." << endl;
         else {
             ris = primo(n);
             if(ris < 0) cout << "Non sono riuscito a stabilire se " << n << " e’ primo\n";
