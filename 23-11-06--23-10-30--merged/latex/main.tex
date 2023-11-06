@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx} % Gestione immagini
+\usepackage{amsmath} %simboli matematici
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+\title{Esercizi 23-11-06}
+\author{Riccardo Gennaro}
+\date{November 2023}
+
+\begin{document}
+
+\maketitle
+
+\section*{Esercizio 1}
+
+    Scrivere un programma che gestisca l'anagrafica di un set di utenti.
+
+    In particolare, il programma deve poter:
+    \begin{itemize}
+        \item aggiungere un l'anagrafica di un utente;
+        \item stampare le anagrafiche ordinate per nome;
+        \item stampare le anagrafiche ordinate per cognome;
+        \item cercare un anagrafica per nome (corrispondenza esatta);
+        \item cercare un anagrafica per cognome (corrispondenza esatta);
+    \end{itemize}
+
+    Con anagrafica si intende:
+
+    \begin{itemize}
+        \item nome;
+        \item cognome;
+        \item indirizzo, composto da:
+        \begin{itemize}
+            \item via;
+            \item civico;
+            \item comune;
+            \item CAP;
+            \item provincia;
+        \end{itemize}
+    \end{itemize}
+
+    \noindent Descrivere l'anagrafica tramite \textit{struct}.    
+
+    \noindent Il programma prevede delle dimensioni massime per gli array.
+
+    L'utente deve poter scegliere una delle opzioni sopra. Il programma termina quando l'utente inserisce la stringa '\texttt{exit}' nel menù.
+    Scrivere il programma rispettando i principi della programmazione su file multipli. 
+
+\section*{Esercizio 2}
+
+    Scrivere un programma che, dato un file di input
+    contente delle parole, generi un secondo file in output che contenga le stesse
+    parole, ma in ordine inverso rispetto al file iniziale. Per essere copiata, una
+    parola deve essere composta da un numero di caratteri \textbf{pari}.\\
+    
+    \noindent Il programma dovrà accettare due parametri da riga di comando: il nome
+    del file in input e il nome del file su cui effettuare l'output, in questo ordine.\\
+    
+    \noindent Il programma dovrà anche implementare dei controlli sul numero di argomenti
+    passati da riga di comando e sull'apertura dei file (in caso di un file
+    di input non esistente).\\
+    
+    \noindent Procediamo ora con un esempio. Dato in input il file input\textunderscore A, contenente le seguenti parole:\\
+    
+    \noindent \texttt{Impara a risolvere tutti i problemi che sono stati risolti.
+    Richard Feynman}\\
+
+    \noindent se l'eseguibile è a.out, allora il comando \texttt{./a.out input\textunderscore A output} genererà un file chiamato \texttt{output} che conterrà le seguenti parole:\\
+    
+    \noindent \texttt{risolti. sono problemi Impara}\\
+    
+    \noindent \textbf{Note}
+    \begin{itemize}
+        \item Per semplicità, considerate come una \textit{parola} qualsiasi stringa di caratteri
+        compresa tra due spazi bianchi (e/o separatori di tabulazione,
+        nuova linea e fine file). Quindi, sono da considerarsi parole anche
+        stringhe come \texttt{"andato:"} o \texttt{"!esempio"}.
+        \item Il file in input può contenere al massimo 10000 parole e ognuna di
+        queste parole è formata da al massimo 100 caratteri.
+        \item Non è consentito l'utilizzo di librerie diverse da \texttt{<iostream>} ed \texttt{<fstream>} pena \textbf{l'annullamento dell'esercizio}.
+        \item E' consentito definire ed implementare funzioni ausiliarie che possano\\
+        aiutarvi nella soluzione del problema.
+    \end{itemize}
+
+\newpage
+    
+\section*{Esercizio 3}
+
+Scrivere un programma che calcoli il \textit{prodotto matriciale} di due matrici di numeri interi. Se le matrici non sono compatibili per il prodotto stampare un messaggio di errore.\\
+\noindent La dimensione delle matrici deve essere specificata dall'utente. Il prodotto è calcolato con la funzione seguente:
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    int** compute_prod(int** m1, int r1, int c1, int** m2, int c2);
+    \end{minted}
+
+Dove 
+\begin{itemize}
+    \item \texttt{m1} è la prima matrice;
+    \item \texttt{r1} è il numero di righe di m1;
+    \item \texttt{c1} è il numero di colonne di m1;
+    \item \texttt{m2} è la seconda matrice;
+    \item \texttt{c2} è il numero di colonne di m2;
+\end{itemize}
+NOTA: la complessità di \texttt{compute\textunderscore prod(...)} deve essere pari o inferiore a $O(n^3)$. Ciò significa che potete implementare la funzione con l'algoritmo che si basa sulla definizione del prodotto fra matrici, oppure, se siete dei pazzi maniaci, potete implementare l'\color{blue}\href{https://it.wikipedia.org/wiki/Algoritmo_di_Strassen}{algoritmo di Strassen}\color{black}.
+\end{document}

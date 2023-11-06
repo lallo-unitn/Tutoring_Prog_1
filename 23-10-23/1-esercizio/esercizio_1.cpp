@@ -11,7 +11,7 @@ int main(){
     int to_remove_index = 3;                                  
     int counter = DIM;
     remove_rec(a, &counter, to_remove_index);
-    for (int j = 0; j < DIM-1; j++)             // stampa a modificato
+    for (int j = 0; j < DIM; j++)             // stampa a modificato
     {
         cout << a[j] << endl;
     }
@@ -20,7 +20,7 @@ int main(){
 }
 
 void remove_rec(float a[], int* counter, int to_remove_index){
-    if (*counter > to_remove_index)
+    if (*counter > to_remove_index + 1)
     {   
         int current_index = DIM - *counter + to_remove_index;
         a[current_index] = a[current_index + 1];
