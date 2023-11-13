@@ -4,7 +4,7 @@ using namespace std;
 #include <fstream>
 
 const int NMaxL{81};
-const int scarto = 'A' - 'a';
+const int ASCIIcapLetters = 'A' - 'a';
 
 int main(int argc, char* argv[]){
 
@@ -27,9 +27,9 @@ int main(int argc, char* argv[]){
     bool nextup{true};
 
     while(myin >> stringa){
-        if(nextup == true){
+        if(nextup){
             if(stringa[0] >= 'a' && stringa[0] <= 'z'){
-                stringa[0] = stringa[0] + scarto;
+                stringa[0] += ASCIIcapLetters;
             }
         }
         if(stringa[strlen(stringa)-1] == '!' || stringa[strlen(stringa)-1] == '?' || stringa[strlen(stringa)-1] == '.'){

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{        }\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{messaggio}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{           }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{testo}\PYG{p}{[}\PYG{l+m+mi}{10000}\PYG{p}{];}
+\PYG{+w}{           }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{priorita}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
