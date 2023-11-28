@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{o}{**}\PYG{+w}{ }\PYG{n+nf}{compute\PYGZus{}prod}\PYG{p}{(}\PYG{k+kt}{int}\PYG{o}{**}\PYG{+w}{ }\PYG{n}{m1}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{r1}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{c1}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{o}{**}\PYG{+w}{ }\PYG{n}{m2}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{c2}\PYG{p}{);}
+\end{Verbatim}

@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx} % Gestione immagini
+\usepackage{amsmath} %simboli matematici
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+
+\title{Esercizi 28-11-23}
+\author{Riccardo Gennaro}
+\date{November 2023}
+
+\begin{document}
+
+    \maketitle
+
+    \section*{Esercizio 1 (Coda a priorità con liste)}
+
+    Un messaggio viene rappresentato mediante una struct
+
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+        struct messaggio {
+           char testo[10000];
+           int priority;
+        }
+    \end{minted}
+
+    dove priorità ha un range crescente da 1 a 10.
+    Scrivere una struttura dati \("\)coda a priorita\("\) (con una lista di nodi) in cui e' possibile inserire messaggi, da cui vengono estratti in modo FIFO per classi di priorita': (prima quelli a priorita' 10, poi quelli a priorita' 9,...)
+
+    \section*{Esercizio 2 (Allocazione dinamica e matrici)}
+
+    Scrivere un programma che calcoli il \textit{prodotto matriciale} di due matrici di numeri interi.
+    Se le matrici non sono compatibili per il prodotto stampare un messaggio di errore.\\
+    \noindent La dimensione delle matrici deve essere specificata dall'utente (i.e. usare l'allocazione dinamica).
+    Il prodotto è calcolato con la funzione seguente:
+    \begin{minted}
+    [
+        frame=lines,
+        framesep=2mm,
+        baselinestretch=1.2,
+        fontsize=\footnotesize,
+        linenos
+    ]
+    {C}
+    int** compute_prod(int** m1, int r1, int c1, int** m2, int c2);
+    \end{minted}
+
+    Dove
+    \begin{itemize}
+        \item \texttt{m1} è la prima matrice;
+        \item \texttt{r1} è il numero di righe di m1;
+        \item \texttt{c1} è il numero di colonne di m1;
+        \item \texttt{m2} è la seconda matrice;
+        \item \texttt{c2} è il numero di colonne di m2;
+    \end{itemize}
+    NOTA: la complessità di \texttt{compute\textunderscore prod(...)} deve essere pari o inferiore a $O(n^3)$.
+    Ciò significa che potete implementare la funzione con l'algoritmo che si basa sulla definizione del prodotto fra matrici, oppure, se siete dei pazzi maniaci, potete implementare l'\color{blue}\href{https://it.wikipedia.org/wiki/Algoritmo\textunderscore di\textunderscore Strassen}{algoritmo di Strassen}\color{black}.
+
+\end{document}
