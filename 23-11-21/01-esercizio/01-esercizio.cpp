@@ -92,6 +92,7 @@ bool insertSorted(Student *studentArray, Student *student, unsigned int size, So
     for (unsigned int j = size; j > i; j--) {
         studentArray[j] = studentArray[j - 1];
     }
+    
     // insert element
     studentArray[i] = *student;
     return true;
