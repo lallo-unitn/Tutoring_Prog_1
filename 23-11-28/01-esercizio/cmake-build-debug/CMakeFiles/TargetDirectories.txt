@@ -1,0 +1,3 @@
+/home/lallo/Tutoring_C/23-11-28/01-esercizio/cmake-build-debug/CMakeFiles/01_esercizio.dir
+/home/lallo/Tutoring_C/23-11-28/01-esercizio/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lallo/Tutoring_C/23-11-28/01-esercizio/cmake-build-debug/CMakeFiles/rebuild_cache.dir
