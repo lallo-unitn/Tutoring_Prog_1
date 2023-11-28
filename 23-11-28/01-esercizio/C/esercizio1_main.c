@@ -3,7 +3,7 @@
 
 int main() {
 
-  char res = 0;
+  char res[2];
   messaggio mess;
   queue q;
 
@@ -17,11 +17,9 @@ int main() {
     printf("Print (p)\n");
     printf("Quit (q)\n");
 
-    scanf("%c", &res);
-    // printf("%c", res);
+    scanf("%1s", res);
 
-    switch (res) {
-
+    switch (res[0]) {
     case 'e':
       printf("Valore: ");
       scanf("%s", mess.testo);
@@ -65,7 +63,7 @@ int main() {
     default:
       printf("Valore errato!\n");
     }
-  } while (res != 'q');
+  } while (*res != 'q');
 
   return 0;
 }
